@@ -60,6 +60,11 @@ public class EmployeeController {
 
         return ResponseEntity.ok(updatedEmployee);
     }
+    @GetMapping("/search")
+    public List<Employee> searchEmployeesByName(@RequestParam String name) {
+        return employeeService.searchByName(name);
+    }
+
 }
 
 
